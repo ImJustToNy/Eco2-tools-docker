@@ -53,8 +53,8 @@ jobs:
           platforms: ${{env.platforms}}
           push: true
           tags: |
-            ghcr.io/ImJustToNy/eco2-tools:${{ steps.event_name.outputs.event_name }}
-            ghcr.io/ImJustToNy/eco2-tools:${{ steps.latest_tag.outputs.latest_tag }}
+            ghcr.io/imjusttony/eco2-tools:${{ steps.event_name.outputs.event_name }}
+            ghcr.io/imjusttony/eco2-tools:${{ steps.latest_tag.outputs.latest_tag }}
 
       - name: Build and push
         uses: docker/build-push-action@v2
@@ -62,11 +62,11 @@ jobs:
           context: ./scan
           file: ./Dockerfile-tools
           platforms: ${{env.platforms}}
-          build-args: image=ghcr.io/ImJustToNy/eco2-tools:${{ steps.event_name.outputs.event_name }}
+          build-args: image=ghcr.io/imjusttony/eco2-tools:${{ steps.event_name.outputs.event_name }}
           push: true
           tags: |
-            ghcr.io/ImJustToNy/eco2-tools-scan:${{ steps.event_name.outputs.event_name }}
-            ghcr.io/ImJustToNy/eco2-tools-scan:${{ steps.latest_tag.outputs.latest_tag }}
+            ghcr.io/imjusttony/eco2-tools-scan:${{ steps.event_name.outputs.event_name }}
+            ghcr.io/imjusttony/eco2-tools-scan:${{ steps.latest_tag.outputs.latest_tag }}
 
       - name: Build and push
         uses: docker/build-push-action@v2
@@ -74,8 +74,8 @@ jobs:
           context: ./keytool
           file: ./Dockerfile-tools
           platforms: ${{env.platforms}}
-          build-args: image=ghcr.io/ImJustToNy/eco2-tools:${{ steps.event_name.outputs.event_name }}
+          build-args: image=ghcr.io/imjusttony/eco2-tools:${{ steps.event_name.outputs.event_name }}
           push: true
           tags: |
-            ghcr.io/ImJustToNy/eco2-tools-keytool:${{ steps.event_name.outputs.event_name }}
-            ghcr.io/ImJustToNy/eco2-tools-keytool:${{ steps.latest_tag.outputs.latest_tag }}
+            ghcr.io/imjusttony/eco2-tools-keytool:${{ steps.event_name.outputs.event_name }}
+            ghcr.io/imjusttony/eco2-tools-keytool:${{ steps.latest_tag.outputs.latest_tag }}
